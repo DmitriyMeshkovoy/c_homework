@@ -1,0 +1,54 @@
+//
+// Created by meshk on 28.02.2026.
+//
+
+#include <stdbool.h>
+#include <stdio.h>
+void print_array(const int *arr, int size) {
+    for (int i = size - 1; i >=0 ; i--) {
+        printf("%d", arr[i]);
+    }
+}
+void sort_interval(int *arr, int start, int end, bool reverse) {
+    if (start >= end) return;
+    int len = end - start + 1;
+    for (int i = 0; i < len - 1; i++) {
+        for (int j = start; j < end - i; j++) {
+            if (reverse) {
+                if (arr[j] < arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            } else {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
+
+int main(void) {
+    int N = 0;
+    int counter = 0;
+    if (scanf("%d", &N) != 1 || N <=0) {
+        return 1;
+    }
+    int M =N;
+    while (N!=0) {
+        N = N/10;
+        counter++;
+    }
+    int arr[counter];
+    for (int i = 0; i < counter; i++) {
+        arr[i] = M%10;
+        M = M/10;
+    }
+    sort_interval(arr, 0, counter-1, false);
+    print_array(arr, counter);
+
+    return 0;
+}

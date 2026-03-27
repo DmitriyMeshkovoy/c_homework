@@ -131,3 +131,7 @@ add_executable(hw9_task17 HW9/F_17.c)
 add_executable(hw9_task18 HW9/F_18.c)
 add_executable(hw9_task19 HW9/F_19.c)
 add_executable(hw9_task20 HW9/F_20.c)
+
+# HW 10
+add_executable(hw10_task1 HW10/G_1.c)
+add_executable(hw10_task2 HW10/G_2.c)

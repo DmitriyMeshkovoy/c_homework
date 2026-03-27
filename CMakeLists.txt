@@ -135,3 +135,4 @@ add_executable(hw9_task20 HW9/F_20.c)
 # HW 10
 add_executable(hw10_task1 HW10/G_1.c)
 add_executable(hw10_task2 HW10/G_2.c)
+add_executable(hw10_task3 HW10/G_3.c)
